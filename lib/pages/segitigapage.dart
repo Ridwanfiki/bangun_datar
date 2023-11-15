@@ -16,7 +16,7 @@ class SegitigaPage extends StatelessWidget {
       body: Column(
         children: [
           Image.asset(
-            "assets/images.jpg",
+            "assets/triangle.png",
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 16),

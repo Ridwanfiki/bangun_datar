@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ridwan_bangun_datar/pages/persegipage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -13,10 +14,20 @@ class HomePage extends StatelessWidget {
               "Home Page",
               style: TextStyle(color: Colors.white),
             )),
-        body: Column(
+        body: ListView(
           children: [
-            CustomMenu(imageAssets: "assets/images.jpg",title: "segitiga",),
-            CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang",),
+            InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPage()));
+              },
+                child: CustomMenu(imageAssets: "assets/images.jpg",title: "segitiga",)),
+            Row(
+              children: [
+                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
+                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
+                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
+              ],
+            ),
             Container(
               margin: EdgeInsets.all(8),
               padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),

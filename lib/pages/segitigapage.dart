@@ -20,7 +20,7 @@ class SegitigaPage extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.symmetric(vertical: 16),
-            child: Text("persegi"),
+            child: Text("Segitiga"),
           ),
           Text(
               "Sebuah segitiga adalah poligon dengan tiga ujung dan tiga simpul. Ini adalah salah satu bentuk dasar dalam geometri. Segitiga dengan simpul A, B, dan C"),

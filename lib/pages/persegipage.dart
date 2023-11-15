@@ -5,7 +5,7 @@ import 'package:ridwan_bangun_datar/controller/persegi_controller.dart';
 
 class PersegiPage extends StatelessWidget {
    PersegiPage({super.key});
-final PersegiController _persegiController = Get.put(PersegiController());
+   final PersegiController _persegiController = Get.put(PersegiController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -80,8 +80,17 @@ final PersegiController _persegiController = Get.put(PersegiController());
             ],
           ),
 
-          Obx(() => Text(_persegiController.hasil.value))
-        ],
+          Obx(
+                  () => Text(
+                    _persegiController.hasil.value,
+                    style: TextStyle(
+                        color: _persegiController.isHitungLuas.value
+                        ? Colors.green
+                        : Colors.yellow,
+    ),
+                  ),
+          ),
+            ],
       ),
     );
   }

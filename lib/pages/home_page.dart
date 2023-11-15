@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ridwan_bangun_datar/pages/persegipage.dart';
+import 'package:ridwan_bangun_datar/pages/persegipanjangpage.dart';
+import 'package:ridwan_bangun_datar/pages/segitigapage.dart';
+import 'package:ridwan_bangun_datar/pages/jajargenjangpage.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,25 +23,24 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPage()));
               },
-                child: CustomMenu(imageAssets: "assets/images.jpg",title: "segitiga",)),
-            Row(
-              children: [
-                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
-                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
-                Expanded(child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang")),
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.all(8),
-              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              decoration: BoxDecoration(color: Colors.green),
-              child: Column(
-                children: [
-                  Image.asset("assets/images.jpg"),
-                  Text("Persegi"),
-                ],
-              ),
-            ),
+                child: CustomMenu(imageAssets: "assets/persegi.png",title: "persegi",)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPanjangPage()));
+                },
+                child: CustomMenu(imageAssets: "assets/persegi-panjang.jpg",title: "persegi panjang",)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SegitigaPage()));
+                },
+                child: CustomMenu(imageAssets: "assets/triangle.png",title: "segitiga",)),
+            InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => JajarGenjangPage()));
+                },
+                child: CustomMenu(imageAssets: "assets/download.png",title: "jajar genjang",)),
+
+
           ],
         ));
   }
@@ -60,7 +62,7 @@ class CustomMenu extends StatelessWidget {
       child: Column(
         children: [
           Image.asset(
-            imageAssets,
+            imageAssets, height: 100, width: 100,
           ),
           Text(title),
         ],
